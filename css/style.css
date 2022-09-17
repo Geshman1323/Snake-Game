@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Silkscreen", cursive;
+}
+body {
+  min-height: 100vh;
+  display: flex;justify-content: center;
+}
+
+.h1 {
+  color: rgb(100, 100, 100);
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+
+.plane {
+  height: 35rem;
+  width: 35rem;
+  border: 0.25rem solid rgb(100, 100, 100);
+  display: grid;
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(20, 1fr);
+}
+
+.snake {
+  background: rgb(100, 100, 100);
+  border: 0.15rem solid rgb(255, 255, 255);
+}
+
+.food {
+  background: rgb(255, 0, 0);
+  animation: food 0.6s ease-in-out infinite;
+}
+
+@keyframes food {
+  0% {
+    border: 0.15rem solid rgb(255, 255, 255);
+  }
+  50% {
+    border: 0 solid rgb(255, 255, 255);
+  }
+  100% {
+    border: 0.15rem solid rgb(255, 255, 255);
+  }
+}
+
+.arrowkeys {
+  background: rgb(126, 126, 126);
+  border: none;
+  color: #fff;
+}
+
+.forMobile {
+  margin: .25rem 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 2rem);
+  grid-template-rows: repeat(3, 2rem);
+  gap: 2px;
+}
+
+#arrowUp {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+#arrowDown {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 2;
+}
+
+ #arrowleft {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.score {
+  color: rgb(100, 100, 100)
+}
+
+@media (max-width: 500px) {
+  .plane {
+    height: 20rem;
+    width: 20rem;
+  }
+}
